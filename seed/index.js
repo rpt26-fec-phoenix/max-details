@@ -1,5 +1,6 @@
-// connect to mongodb
+const detailClass = require('./detail.js');
 const mongoose = require('mongoose');
+// connect to mongodb
 mongoose.connect('mongodb://localhost/airbnb', {userNewUrlParser: true, useUnifiedTopology: true});
 
 const db = mongoose.connection;
@@ -54,3 +55,5 @@ const newDetail = new Detail({
 newDetail.save(function (err) {
   if (err) { return console.error(err); }
 });
+
+console.log(new detailClass(1));
