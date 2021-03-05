@@ -1,3 +1,5 @@
+const faker = require('faker');
+
 module.exports = class Detail {
   constructor(propertyId) {
     this.typeOfPlace = null;
@@ -11,6 +13,7 @@ module.exports = class Detail {
     this.setProperty();
     this.setCancellation();
     this.setHouseRules();
+    this.setAbout();
   }
 
   setProperty() {
@@ -45,7 +48,6 @@ module.exports = class Detail {
       pets: null,
       longTermStay: null,
       additionalRules: null
-
     };
 
     const checkInTimes = ['12:00 PM', '1:00 PM', '2:00 PM', '3:00 PM', '4:00 PM', '5:00 PM'];
@@ -67,7 +69,43 @@ module.exports = class Detail {
       houseRules.checkOut = '3:00 PM';
     }
 
+    houseRules.selfCheckIn.allowSelfCheckIn = Math.floor(Math.random() * 2) === 0 ? true : false;
+    const selfCheckInOptions = ['lockbox', 'keypad', 'doorman'];
+    if (houseRules.selfCheckIn.allowSelfCheckIn === true) {
+      houseRules.selfCheckIn.howToCheckIn = selfCheckInOptions[Math.floor(Math.random() * selfCheckInOptions.length)];
+    }
+
+    const ages = ['infants', 'children', 'all'];
+    houseRules.suitableAge = ages[Math.floor(Math.random() * ages.length)];
+
+    houseRules.smoking = Math.random() < 0.5;
+    houseRules.parties = Math.random() < 0.5;
+    houseRules.pets = Math.random() < 0.5;
+    houseRules.longTermStay = Math.random() < 0.5;
+
+    let additionalRules = faker.lorem.sentences(Math.floor(Math.random() * 5));
+    houseRules.additionalRules = additionalRules;
+
     this.houseRules = houseRules;
+  }
+
+  setAbout() {
+    const about = {
+      description: null,
+      space: null,
+      access: null,
+      other: null
+    };
+
+    for (let key in about) {
+      about[key] = faker.lorem.paragraph();
+    }
+
+    this.about = about;
+  }
+
+  setSleepingArrangements() {
+
   }
 };
 

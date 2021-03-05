@@ -16,8 +16,8 @@ const detailSchema = new mongoose.Schema({
   propertyType: String,
   cancellation: String,
   houseRules: {
-    checkin: String,
-    checkout: String,
+    checkIn: String,
+    checkOut: String,
     selfCheckIn: {
       allowSelfCheckIn: Boolean,
       howToCheckIn: String
@@ -31,6 +31,7 @@ const detailSchema = new mongoose.Schema({
   },
   about: {
     description: String,
+    space: String,
     access: String,
     other: String
   },
@@ -47,9 +48,7 @@ const detailSchema = new mongoose.Schema({
 const Detail = mongoose.model('Detail', detailSchema);
 
 // create record
-const newDetail = new Detail({
-  typeOfPlace: 'House'
-});
+const newDetail = new Detail(new detailClass(1));
 
 // add record to db
 newDetail.save(function (err) {
