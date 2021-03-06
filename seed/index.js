@@ -47,12 +47,18 @@ const detailSchema = new mongoose.Schema({
 // compile schema into model
 const Detail = mongoose.model('Detail', detailSchema);
 
-// create record
-const newDetail = new Detail(new detailClass(1));
+const seedDetails = async function() {
+  await Detail.remove({});
 
-// add record to db
-newDetail.save(function (err) {
-  if (err) { return console.error(err); }
-});
+  for (let i = 1; i <= 100; i++) {
+    // create record
+    const newDetail = await new Detail(new detailClass(i));
+    // add record to db
+    await newDetail.save(function (err) {
+      if (err) { return console.error(err); }
+    });
+    console.log('Added new record with id: ', i);
+  }
+}
 
-console.log(new detailClass(1));
+seedDetails();

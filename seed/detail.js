@@ -14,6 +14,7 @@ module.exports = class Detail {
     this.setCancellation();
     this.setHouseRules();
     this.setAbout();
+    this.setSleepingArrangements();
   }
 
   setProperty() {
@@ -105,7 +106,26 @@ module.exports = class Detail {
   }
 
   setSleepingArrangements() {
+    const sleepingArrangements = {
+      guests: null,
+      bedrooms: null,
+      beds: null,
+      baths: null
+    };
 
+    if (this.typeOfPlace === 'privateRoom') {
+      sleepingArrangements.bedrooms = 1;
+    } else {
+      sleepingArrangements.bedrooms = Math.floor(Math.random() * (7 - 1) + 1);
+    }
+
+    sleepingArrangements.beds = Math.floor(Math.random() * (3 - 1) + 1) * sleepingArrangements.bedrooms;
+
+    sleepingArrangements.baths = Math.floor(Math.random() * (sleepingArrangements.bedrooms - 1) + 1);
+
+    sleepingArrangements.guests = Math.floor(Math.random() * (3 - 1) + 1) * sleepingArrangements.beds;
+
+    this.sleepingArrangements = sleepingArrangements;
   }
 };
 
