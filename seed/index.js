@@ -1,7 +1,7 @@
 const detailClass = require('./detail.js');
 const mongoose = require('mongoose');
 // connect to mongodb
-mongoose.connect('mongodb://localhost/airbnb', {userNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect('mongodb://localhost/airbnb', {useNewUrlParser: true, useUnifiedTopology: true});
 
 const db = mongoose.connection;
 
@@ -47,8 +47,8 @@ const detailSchema = new mongoose.Schema({
 // compile schema into model
 const Detail = mongoose.model('Detail', detailSchema);
 
-const seedDetails = async function() {
-  await Detail.remove({});
+const seedDetails = async function () {
+  await Detail.deleteMany({});
 
   for (let i = 1; i <= 100; i++) {
     // create record
