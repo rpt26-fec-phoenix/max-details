@@ -8,7 +8,7 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "seed": "node seed/index.js"
+    "seed": "node seed/index.js",
     "server-dev": "nodemon server/index.js",
     "react-dev": "webpack --watch"
   },
@@ -23,9 +23,9 @@
   },
   "dependencies": {
     "express": "^4.17.1",
+    "faker": "^5.4.0",
+    "mongoose": "^5.11.18",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
-    "faker": "^5.4.0",
-    "mongoose": "^5.11.18"
   }
 }
