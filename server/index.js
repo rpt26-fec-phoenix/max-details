@@ -1,3 +1,4 @@
+const db = require('../database/index.js');
 const path = require('path');
 const express = require('express');
 const port = 3001;
@@ -6,8 +7,15 @@ const app = express();
 
 app.use('/', express.static(path.join(__dirname, '../public')));
 
-app.get('/test', (req, res) => {
-  res.send('Hello World');
+app.get('/details/:propertyId', (req, res) => {
+  db.getDetails(req.params.propertyId)
+    .then((details) => {
+      console.log(details[0]);
+      res.send(details[0]);
+    })
+    .catch((err) => {
+      res.send(err);
+    });
 });
 
 app.listen(port, () => {
