@@ -10,14 +10,17 @@
   "scripts": {
     "seed": "node seed/index.js",
     "server-dev": "nodemon server/index.js",
-    "react-dev": "webpack --watch"
+    "react-dev": "webpack --watch",
+    "test": "mocha test/test.js --exit"
   },
   "devDependencies": {
     "@babel/core": "^7.13.8",
     "@babel/preset-env": "^7.13.9",
     "@babel/preset-react": "^7.12.13",
     "babel-loader": "^8.2.2",
+    "chai": "^4.3.3",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
+    "mocha": "^8.3.1",
     "webpack": "^5.24.3",
     "webpack-cli": "^4.5.0"
   },

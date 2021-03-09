@@ -9,9 +9,8 @@ app.use('/', express.static(path.join(__dirname, '../public')));
 
 app.get('/details/:propertyId', (req, res) => {
   db.getDetails(req.params.propertyId)
-    .then((details) => {
-      console.log(details[0]);
-      res.send(details[0]);
+    .then((detail) => {
+      res.send(detail);
     })
     .catch((err) => {
       res.send(err);

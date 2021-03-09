@@ -38,7 +38,7 @@ const detailSchema = new mongoose.Schema({
 const Detail = mongoose.model('Detail', detailSchema);
 
 const getDetails = async function(propertyId) {
-  return await Detail.find({propertyId})
+  return await Detail.findOne({propertyId})
 };
 
 module.exports = {
