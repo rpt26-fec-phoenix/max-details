@@ -41,6 +41,11 @@ const getDetails = async function(propertyId) {
   return await Detail.findOne({propertyId})
 };
 
+const getDetailTitle = async function(propertyId) {
+  return await Detail.findOne({propertyId}, 'typeOfPlace propertyType')
+};
+
 module.exports = {
-  getDetails
+  getDetails,
+  getDetailTitle
 };
