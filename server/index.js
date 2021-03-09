@@ -17,6 +17,16 @@ app.get('/details/:propertyId', (req, res) => {
     });
 });
 
+app.get('/detailTitle/:propertyId', (req, res) => {
+  db.getDetailTitle(req.params.propertyId)
+    .then((detailTitle) => {
+      res.send(detailTitle);
+    })
+    .catch((err) => {
+      res.send(err);
+    });
+});
+
 app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`);
 });
