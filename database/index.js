@@ -48,10 +48,15 @@ const getDetailTitle = async function(propertyId) {
 const getGuests = async function(propertyId) {
   const detail = await Detail.findOne({propertyId}, 'sleepingArrangements');
   return detail.sleepingArrangements.guests;
+};
+
+const closeConnection = function() {
+  mongoose.connection.close();
 }
 
 module.exports = {
   getDetails,
   getDetailTitle,
-  getGuests
+  getGuests,
+  closeConnection
 };
