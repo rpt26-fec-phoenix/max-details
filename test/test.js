@@ -63,4 +63,25 @@ describe('Database Helpers', function() {
   });
 
   // get number of guests from the server
+  describe('getGuests', function() {
+    // it should be a function
+    it('should be a function', function() {
+      expect(typeof db.getGuests).to.equal('function');
+    })
+
+    // it should return an integer
+    it('should return an integer', async function() {
+      const numberOfGuests = await db.getGuests(23);
+      expect(numberOfGuests).to.be.an.integer();
+    })
+
+    // it should return the number of guests for a specific property id
+    it('should retuen the number of guests for the provided property id', async function() {
+      const propertyId = 44;
+      const detail = await db.getDetails(propertyId);
+      const numberOfGuests = detail.sleepingArrangements.guests;
+
+      expect(db.getGuests(propertyId)).to.equal(numberOfGuests);
+    });
+  })
 });
