@@ -1,7 +1,11 @@
 const db = require('../database/index.js');
+const {app, server} = require('../server/index.js');
+const request = require('supertest');
+
 
 afterAll(() => {
   db.closeConnection();
+  server.close();
 })
 
 describe('Database Helpers', () => {
@@ -85,5 +89,56 @@ describe('Database Helpers', () => {
     });
   })
 
+});
+
+describe('Request', () => {
+  describe('GET /details/:propertyId', () => {
+
+    test('should return an object with the expected properties', (done) => {
+      return request(app)
+        .get('/details/1')
+        .then(response => {
+          expect(response.body).toHaveProperty('typeOfPlace');
+          expect(response.body).toHaveProperty('propertyType');
+          expect(response.body).toHaveProperty('cancellation');
+          expect(response.body).toHaveProperty('houseRules');
+          expect(response.body).toHaveProperty('about');
+          expect(response.body).toHaveProperty('sleepingArrangements');
+          expect(response.body).toHaveProperty('propertyId');
+          done();
+        })
+        .catch(err => done(err));
+    });
+
+  });
+
+  describe('GET /detailTitle/:propertyId', () => {
+
+    test('should return an object with the expected properties', (done) => {
+      return request(app)
+        .get('/detailTitle/7')
+        .then(response => {
+          expect(response.body).toHaveProperty('typeOfPlace');
+          expect(response.body).toHaveProperty('propertyType');
+          done();
+        })
+        .catch(err => done(err));
+    });
+
+  });
+
+  describe('GET /guests/:propertyId', () => {
+
+    test('should return an object with the expected properties', (done) => {
+      return request(app)
+        .get('/guests/11')
+        .then(response => {
+          expect(response.body).toHaveProperty('numberOfGuests');
+          done();
+        })
+        .catch(err => done(err));
+    });
+
+  });
 });
 
