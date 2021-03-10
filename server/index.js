@@ -27,6 +27,16 @@ app.get('/detailTitle/:propertyId', (req, res) => {
     });
 });
 
+app.get('/guests/:propertyId', (req, res) => {
+  db.getGuests(req.params.propertyId)
+    .then((numberOfGuests) => {
+      res.send({numberOfGuests});
+    })
+    .catch((err) => {
+      res.send(err);
+    });
+});
+
 app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`);
 });

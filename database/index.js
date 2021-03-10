@@ -45,7 +45,13 @@ const getDetailTitle = async function(propertyId) {
   return await Detail.findOne({propertyId}, 'typeOfPlace propertyType')
 };
 
+const getGuests = async function(propertyId) {
+  const detail = await Detail.findOne({propertyId}, 'sleepingArrangements');
+  return detail.sleepingArrangements.guests;
+}
+
 module.exports = {
   getDetails,
-  getDetailTitle
+  getDetailTitle,
+  getGuests
 };

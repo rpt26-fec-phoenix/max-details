@@ -35,7 +35,6 @@ describe('Database Helpers', function() {
 
   });
 
-  // get detail title from the server
   describe('getDetailTitle()', function() {
 
     it('should return an object', async function() {
@@ -62,26 +61,23 @@ describe('Database Helpers', function() {
     });
   });
 
-  // get number of guests from the server
   describe('getGuests', function() {
-    // it should be a function
     it('should be a function', function() {
       expect(typeof db.getGuests).to.equal('function');
     })
 
-    // it should return an integer
     it('should return an integer', async function() {
       const numberOfGuests = await db.getGuests(23);
-      expect(numberOfGuests).to.be.an.integer();
+      expect(typeof numberOfGuests).to.equal('number');
     })
 
-    // it should return the number of guests for a specific property id
     it('should retuen the number of guests for the provided property id', async function() {
       const propertyId = 44;
       const detail = await db.getDetails(propertyId);
       const numberOfGuests = detail.sleepingArrangements.guests;
+      const guests = await db.getGuests(propertyId);
 
-      expect(db.getGuests(propertyId)).to.equal(numberOfGuests);
+      expect(guests).to.equal(numberOfGuests);
     });
   })
 });
