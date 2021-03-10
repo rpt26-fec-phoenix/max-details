@@ -9,9 +9,28 @@ app.use('/', express.static(path.join(__dirname, '../public')));
 
 app.get('/details/:propertyId', (req, res) => {
   db.getDetails(req.params.propertyId)
-    .then((details) => {
-      console.log(details[0]);
-      res.send(details[0]);
+    .then((detail) => {
+      res.send(detail);
+    })
+    .catch((err) => {
+      res.send(err);
+    });
+});
+
+app.get('/detailTitle/:propertyId', (req, res) => {
+  db.getDetailTitle(req.params.propertyId)
+    .then((detailTitle) => {
+      res.send(detailTitle);
+    })
+    .catch((err) => {
+      res.send(err);
+    });
+});
+
+app.get('/guests/:propertyId', (req, res) => {
+  db.getGuests(req.params.propertyId)
+    .then((numberOfGuests) => {
+      res.send({numberOfGuests});
     })
     .catch((err) => {
       res.send(err);
