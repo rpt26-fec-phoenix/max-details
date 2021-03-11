@@ -1,10 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const App = function() {
-  return (
-    <h1>Hello World, hello hello </h1>
-  );
-};
+import App from './components/App.jsx';
 
 ReactDOM.render(<App />, document.getElementById('root'));
