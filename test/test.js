@@ -28,7 +28,7 @@ describe('Database Helpers', () => {
         propertyId: null
       }
       const detail = await db.getDetails(12);
-      for (key in example) {
+      for (let key in example) {
         expect(detail[key]).not.toEqual('undefined');
       }
     });
