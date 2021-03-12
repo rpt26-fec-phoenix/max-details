@@ -1,7 +1,12 @@
 import React from 'react';
 
-const About = (props) => {
-  return <div>About</div>;
+const About = ({details}) => {
+  return (
+    <div>
+      <div>About</div>
+      <div>{JSON.stringify(details.about)}</div>
+    </div>
+  );
 };
 
 export default About;
