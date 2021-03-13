@@ -5,7 +5,7 @@ const port = 3001;
 
 const app = express();
 
-app.use('/', express.static(path.join(__dirname, '../public')));
+app.use('/:propertyId', express.static(path.join(__dirname, '../public')));
 
 app.get('/details/:propertyId', (req, res) => {
   db.getDetails(req.params.propertyId)
@@ -39,7 +39,7 @@ app.get('/guests/:propertyId', (req, res) => {
 
 
 const server = app.listen(port, () => {
-  console.log(`App listening at http://localhost:${port}`);
+  console.log(`App listening at http://localhost:${port}/1/`);
 });
 
 module.exports = {
