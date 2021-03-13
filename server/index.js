@@ -39,7 +39,7 @@ app.get('/guests/:propertyId', (req, res) => {
 
 
 const server = app.listen(port, () => {
-  console.log(`App listening at http://localhost:${port}`);
+  console.log(`App listening at http://localhost:${port}/1/`);
 });
 
 module.exports = {
