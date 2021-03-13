@@ -13,11 +13,6 @@ describe('Shallow rendering', () => {
     const wrapper = shallow(<App />);
     expect(wrapper.containsAllMatchingElements([<Title />, <Details />, <About />])).toBe(true);
   });
-
-  test('Details should contain Detail component', () => {
-    const wrapper = shallow(<Details />);
-    expect(wrapper.contains(<Detail />)).toBe(true);
-  });
 });
 
 describe('Detail rendering logic', () => {
