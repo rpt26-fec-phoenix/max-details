@@ -4,10 +4,28 @@ import styled from 'styled-components';
 const StyledTitle = styled.div`
   padding-top: 48px;
   padding-bottom: 24px;
+  max-width: 95%;
+  margin: auto;
 `;
 const StyledDiv = styled.div`
   display: inline-block;
   padding-right: 10px;
+  max-width: 90%;
+`;
+const StyledHeading = styled.div`
+color: rgb(34, 34, 34);
+font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+font-weight: 500;
+font-size: 22px;
+line-height: 26px;
+margin-bottom: 8px;
+`;
+const StyledArrangements = styled.div`
+color: #222222 !important;
+font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+font-weight: 400 !important;
+font-size: 16px !important;
+line-height: 20px !important;
 `;
 const StyledImg = styled.img`
   border-radius: 56%;
@@ -16,21 +34,6 @@ const StyledImg = styled.img`
   background: white;
   display: inline-block;
   position: absolute;
-`;
-const StyledHeading = styled.div`
-  color: rgb(34, 34, 34);
-  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
-  font-weight: 500;
-  font-size: 22px;
-  line-height: 26px;
-  margin-bottom: 8px;
-`;
-const StyledArrangements = styled.div`
-  color: #222222 !important;
-  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
-  font-weight: 400 !important;
-  font-size: 16px !important;
-  line-height: 20px !important;
 `;
 
 const Title = ({details, host}) => {
