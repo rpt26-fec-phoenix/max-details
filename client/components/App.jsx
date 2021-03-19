@@ -11,7 +11,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      details: sampleDetail,
+      details: {},
       host: sampleHost
     };
   }
@@ -37,13 +37,17 @@ class App extends Component {
 
   render() {
     const {details, host} = this.state;
-    return (
-      <div>
-        <Title details={details} host={host}/>
-        <Details details={details} host={host}/>
-        <About details={details}/>
-      </div>
-    );
+    if (details.propertyId === undefined) {
+      return <div></div>;
+    } else {
+      return (
+        <div>
+          <Title details={details} host={host}/>
+          <Details details={details} host={host}/>
+          <About details={details}/>
+        </div>
+      );
+    }
   }
 }
 
