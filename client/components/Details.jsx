@@ -7,6 +7,7 @@ const StyledDetails = styled.div`
   padding-bottom: 32px;
   max-width: 95%;
   margin: auto;
+  border-bottom: 1px solid gainsboro;
 `;
 
 const Details = ({details, host}) => {
