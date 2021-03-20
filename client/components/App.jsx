@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 
+import GlobalStyles from './globalStyle.jsx';
 import Title from './Title.jsx';
 import Details from './Details.jsx';
 import About from './About.jsx';
@@ -42,6 +43,7 @@ class App extends Component {
     } else {
       return (
         <div>
+          <GlobalStyles />
           <Title details={details} host={host}/>
           <Details details={details} host={host}/>
           <About details={details}/>

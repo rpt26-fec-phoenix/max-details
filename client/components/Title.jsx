@@ -14,7 +14,6 @@ const StyledDiv = styled.div`
 `;
 const StyledHeading = styled.div`
 color: rgb(34, 34, 34);
-font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
 font-weight: 500;
 font-size: 22px;
 line-height: 26px;
@@ -22,8 +21,7 @@ margin-bottom: 8px;
 `;
 const StyledArrangements = styled.div`
 color: #222222 !important;
-font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
-font-weight: 400 !important;
+font-weight: 325 !important;
 font-size: 16px !important;
 line-height: 20px !important;
 `;
@@ -32,7 +30,7 @@ const StyledImg = styled.img`
   width: 56px;
   height: 56px;
   background: white;
-  display: inline-block;
+  display: inline;
   position: absolute;
 `;
 

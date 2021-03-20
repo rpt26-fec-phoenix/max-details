@@ -1,5 +1,13 @@
 import React from 'react';
 import Detail from './Detail.jsx';
+import styled from 'styled-components';
+
+const StyledDetails = styled.div`
+  padding-top: 32px;
+  padding-bottom: 32px;
+  max-width: 95%;
+  margin: auto;
+`;
 
 const Details = ({details, host}) => {
   const detailsToRender = [];
@@ -16,13 +24,11 @@ const Details = ({details, host}) => {
   detailsToRender.push(<Detail key ={5} type={'houseRules'} details={details} host={host}/>);
 
   return (
-    <div>
-      <ul>
-        {detailsToRender.map((detail) => {
-          return detail;
-        })}
-      </ul>
-    </div>
+    <StyledDetails>
+      {detailsToRender.map((detail) => {
+        return detail;
+      })}
+    </StyledDetails>
   );
 };
 
