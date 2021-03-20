@@ -44,9 +44,11 @@ class App extends Component {
       return (
         <div>
           <GlobalStyles />
-          <Title details={details} host={host}/>
-          <Details details={details} host={host}/>
-          <About details={details}/>
+          <div id="details">
+            <Title details={details} host={host}/>
+            <Details details={details} host={host}/>
+            <About details={details}/>
+          </div>
         </div>
       );
     }
