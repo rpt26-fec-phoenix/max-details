@@ -1,3 +1,7 @@
+/**
+ * @jest-environment node
+ */
+
 const db = require('../database/index.js');
 const {app, server} = require('../server/index.js');
 const request = require('supertest');
