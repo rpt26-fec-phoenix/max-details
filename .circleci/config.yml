@@ -49,6 +49,9 @@ jobs:
       - attach_workspace:
           at: .
       - run:
+          name: seed
+          command: npm run seed
+      - run:
           name: Test
           command: npm test
 workflows:
