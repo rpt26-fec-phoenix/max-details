@@ -1,25 +1,6 @@
 version: 2.1
 orbs:
   node: circleci/node@3.0.0
-# workflows:
-#   node-tests:
-#     jobs:
-#       - node/test
-
-# version: 2.1
-# orbs:
-#   node: circleci/node@3.0.0
-# jobs:
-#   test:
-#     docker:
-#       - image: circleci/mongo:4.4.3
-#     steps:
-#       - node/test
-# workflows:
-#   node-tests:
-#     jobs:
-#       - test
-
 jobs:
   build:
     # Reuse Docker container specification given by the node Orb
@@ -37,7 +18,6 @@ jobs:
           root: .
           paths:
             - .
-
   test:
     docker:
       # The primary container is an instance of the first image listed. The job's commands run in this container.
