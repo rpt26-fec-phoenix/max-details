@@ -61,4 +61,7 @@ const seedDetails = async function () {
   }
 }
 
-seedDetails();
+seedDetails()
+  .then(() => {
+    setTimeout(() => {mongoose.connection.close()}, 3000)
+  })
