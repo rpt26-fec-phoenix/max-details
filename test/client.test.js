@@ -15,6 +15,7 @@ import { sampleDetail, sampleSelfChecKInAllowedDetail, sampleEntirePlaceDetail, 
 describe('Shallow rendering', () => {
   test('App should contain Title, Detail, and About components', () => {
     const wrapper = shallow(<App />);
+    wrapper.setState({details: sampleDetail});
     expect(wrapper.containsAllMatchingElements([<Title />, <Details />, <About />])).toBe(true);
   });
 });
