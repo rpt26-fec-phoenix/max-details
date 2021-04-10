@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   mongo:
-    image: mongo:4.2.8
+    image: maxmilpro/db:1.0
     ports:
       - 27017:27017
     volumes:
@@ -10,7 +10,7 @@ services:
       - mongodb_config:/data/configdb
 
   details:
-    image: maxmilpro/detailsservice:1.4
+    image: maxmilpro/detailsservice:latest
     ports:
       - 3003:3003
     volumes:

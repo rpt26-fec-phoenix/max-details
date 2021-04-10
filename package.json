@@ -12,7 +12,8 @@
     "server-dev": "nodemon server/index.js",
     "react-dev": "webpack --watch",
     "test": "jest",
-    "start": "node server/index.js"
+    "start": "node server/index.js",
+    "build": "docker build --tag maxmilpro/detailsservice ."
   },
   "devDependencies": {
     "@babel/core": "^7.13.8",
