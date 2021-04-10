@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  mongo:
+    image: maxmilpro/db:1.0
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb:/data/db
+      - mongodb_config:/data/configdb
+
+  details:
+    image: maxmilpro/detailsservice:latest
+    ports:
+      - 3003:3003
+    volumes:
+      - ./:/app
+    command: npm start
+
+volumes:
+  mongodb:
+  mongodb_config:
