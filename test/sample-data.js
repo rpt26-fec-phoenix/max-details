@@ -121,3 +121,31 @@ module.exports.sampleSuperHost = {
   isSuperhost: true,
   HostDescription: 'This is my super host description'
 };
+
+module.exports.allHouseRules = {
+  'suitableAge': 'infants',
+  'smoking': false,
+  'parties': false,
+  'pets': false
+};
+
+module.exports.onlySuitableAge = {
+  'suitableAge': 'children',
+  'smoking': true,
+  'parties': true,
+  'pets': true
+};
+
+module.exports.allSuitableAge = {
+  'suitableAge': 'all',
+  'smoking': false,
+  'parties': true,
+  'pets': false
+};
+
+module.exports.noRules = {
+  'suitableAge': 'all',
+  'smoking': true,
+  'parties': true,
+  'pets': true
+};
