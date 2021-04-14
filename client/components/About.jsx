@@ -4,9 +4,13 @@ import styled from 'styled-components';
 const StyledAbout = styled.div`
   padding-top: 32px;
   padding-bottom: 48px;
-  max-width: 95%;
-  margin: auto;
   border-bottom: 1px solid gainsboro;
+  padding-left: 40px;
+  padding-right: 40px;
+  max-width: 1280px;
+  min-width: 744px;
+  margin-left: 10%;
+  margin-right: 10%;
 `;
 
 const Content = styled.div`

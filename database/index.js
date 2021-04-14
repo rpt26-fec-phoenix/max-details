@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://mongo/airbnbDetails', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect('mongodb://localhost/airbnbDetails', {useNewUrlParser: true, useUnifiedTopology: true});
 
 const detailSchema = new mongoose.Schema({
   typeOfPlace: String,
