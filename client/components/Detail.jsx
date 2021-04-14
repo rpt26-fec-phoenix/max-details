@@ -31,6 +31,26 @@ const Snippet = styled.div`
   line-height: 20px;
 `;
 
+const GetDetails = styled.button`
+  font-size: inherit;
+  font-family: inherit;
+  font-style: inherit;
+  font-variant: inherit;
+  line-height: inherit;
+  appearance: none;
+  background: transparent;
+  border: 0px;
+  cursor: pointer;
+  margin: 0px;
+  padding: 0px;
+  user-select: auto;
+  color: rgb(34, 34, 34);
+  text-decoration: underline;
+  border-radius: 4px;
+  font-weight: 600;
+  outline: none;
+`;
+
 const Detail = ({type, details, host}) => {
   const descriptions = {
     entirePlace: [
@@ -52,7 +72,7 @@ const Detail = ({type, details, host}) => {
       {description[0]}
       <Description>
         <Title>{description[1]}</Title>
-        <Snippet>{description[2]}</Snippet>
+        {type === 'houseRules' ? <Snippet>{description[2]} <GetDetails>Get details</GetDetails></Snippet> : <Snippet>{description[2]}</Snippet>}
       </Description>
     </StyledDetail>
   );
