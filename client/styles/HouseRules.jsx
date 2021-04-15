@@ -57,10 +57,10 @@ const PopUpFrame = styled.div`
 `;
 
 const ContentHeader = styled.h2`
-  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
-  font-weight: 600 !important;
-  font-size: 22px !important;
-  line-height: 26px !important;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 26px;
   margin-bottom: 32px;
   padding: 0px;
   display: block;
@@ -68,23 +68,46 @@ const ContentHeader = styled.h2`
 `;
 
 const AdditionalRulesHeader = styled.h3`
-  color: rgb(34, 34, 34) !important;
-  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
-  font-weight: 500 !important;
-  font-size: 1.2em !important;
-  line-height: 22px !important;
+  color: rgb(34, 34, 34);
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+  font-weight: 500;
+  font-size: 1.2em;
+  line-height: 22px;
   margin-top: 20px;
-  margin-bottom: 20px !important;
+  margin-bottom: 20px;
 `;
 
 const AdditionalRules = styled.div`
-  color: rgb(34, 34, 34) !important;
-  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
-  font-weight: 400 !important;
-  font-size: 16px !important;
-  line-height: 24px !important;
-  white-space: pre-wrap !important;
+  color: rgb(34, 34, 34);
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  white-space: pre-wrap;
   margin-bottom: 40px;
 `;
 
-export {PopUpBackground, PopUpContainer, StyledHouseRules, PopUpHeader, PopUpFrame, ContentHeader, AdditionalRulesHeader, AdditionalRules};
+const ClosePopUp = styled.div`
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  display: flex;
+`;
+
+const Button = styled.button`
+  appearance: none;
+  display: inline-block;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  margin: 0px;
+  padding: 0px;
+  color: rgb(34, 34, 34);
+  cursor: pointer;
+  touch-action: manipulation;
+  position: relative;
+  background: transparent;
+  transition: -ms-transform 0.25s ease 0s, -webkit-transform 0.  25s ease 0s, transform 0.25s ease 0s;
+`;
+
+export {PopUpBackground, PopUpContainer, StyledHouseRules, PopUpHeader, PopUpFrame, ContentHeader, AdditionalRulesHeader, AdditionalRules, ClosePopUp, Button };

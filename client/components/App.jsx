@@ -58,7 +58,7 @@ class App extends Component {
             <Details details={details} host={host} togglePop={this.togglePop}/>
             <About details={details}/>
           </div>
-          { seen ? <HouseRules rules={details.houseRules}/> : null}
+          { seen ? <HouseRules rules={details.houseRules} togglePop={this.togglePop}/> : null}
         </div>
       );
     }
