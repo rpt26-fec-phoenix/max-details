@@ -6,6 +6,7 @@ import GlobalStyles from './globalStyle.jsx';
 import Title from './Title.jsx';
 import Details from './Details.jsx';
 import About from './About.jsx';
+import HouseRules from './HouseRules.jsx';
 import {sampleDetail, sampleHost, sampleSuperHost} from '../../test/sample-data.js';
 
 class App extends Component {
@@ -13,8 +14,10 @@ class App extends Component {
     super(props);
     this.state = {
       details: {},
-      host: sampleHost
+      host: sampleHost,
+      seen: false
     };
+    this.togglePop = this.togglePop.bind(this);
   }
 
   componentDidMount() {
@@ -36,8 +39,15 @@ class App extends Component {
       });
   }
 
+  togglePop() {
+    console.log('toggling the pop');
+    this.setState({
+      seen: !this.state.seen
+    });
+  }
+
   render() {
-    const {details, host} = this.state;
+    const {details, host, seen} = this.state;
     if (details.propertyId === undefined) {
       return <div></div>;
     } else {
@@ -46,9 +56,10 @@ class App extends Component {
           <GlobalStyles />
           <div id="details">
             <Title details={details} host={host}/>
-            <Details details={details} host={host}/>
+            <Details details={details} host={host} togglePop={this.togglePop}/>
             <About details={details}/>
           </div>
+          { seen ? <HouseRules/> : null}
         </div>
       );
     }

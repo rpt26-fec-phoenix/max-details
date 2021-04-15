@@ -51,7 +51,7 @@ const GetDetails = styled.button`
   outline: none;
 `;
 
-const Detail = ({type, details, host}) => {
+const Detail = ({type, details, host, togglePop}) => {
   const descriptions = {
     entirePlace: [
       <House size="24"/>,
@@ -72,7 +72,7 @@ const Detail = ({type, details, host}) => {
       {description[0]}
       <Description>
         <Title>{description[1]}</Title>
-        {type === 'houseRules' ? <Snippet>{description[2]} <GetDetails>Get details</GetDetails></Snippet> : <Snippet>{description[2]}</Snippet>}
+        {type === 'houseRules' ? <Snippet>{description[2]} <GetDetails onClick={togglePop}>Get details</GetDetails></Snippet> : <Snippet>{description[2]}</Snippet>}
       </Description>
     </StyledDetail>
   );

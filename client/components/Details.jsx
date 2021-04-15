@@ -14,19 +14,19 @@ const StyledDetails = styled.div`
   margin-right: 10%;
 `;
 
-const Details = ({details, host}) => {
+const Details = ({ details, host, togglePop }) => {
   const detailsToRender = [];
   if (details.typeOfPlace === 'entirePlace') {
-    detailsToRender.push(<Detail key ={1} type={'entirePlace'} details={details} host={host}/>);
+    detailsToRender.push(<Detail key={1} type={'entirePlace'} details={details} host={host}/>);
   }
   if (host.isSuperhost) {
-    detailsToRender.push(<Detail key ={2} type={'superHost'} details={details} host={host}/>);
+    detailsToRender.push(<Detail key={2} type={'superHost'} details={details} host={host}/>);
   } else if (details.houseRules.selfCheckIn.allowSelfCheckIn) {
-    detailsToRender.push(<Detail key ={2} type={'selfCheckIn'} details={details} host={host}/>);
+    detailsToRender.push(<Detail key={2} type={'selfCheckIn'} details={details} host={host}/>);
   }
-  detailsToRender.push(<Detail key ={3} type={'enhancedClean'} details={details} host={host}/>);
-  detailsToRender.push(<Detail key ={4} type={'cancellationPolicy'} details={details} host={host}/>);
-  detailsToRender.push(<Detail key ={5} type={'houseRules'} details={details} host={host}/>);
+  detailsToRender.push(<Detail key={3} type={'enhancedClean'} details={details} host={host}/>);
+  detailsToRender.push(<Detail key={4} type={'cancellationPolicy'} details={details} host={host}/>);
+  detailsToRender.push(<Detail key={5} type={'houseRules'} details={details} host={host} togglePop={togglePop}/>);
 
   return (
     <StyledDetails>
