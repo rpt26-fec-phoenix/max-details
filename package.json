@@ -9,7 +9,7 @@
   },
   "scripts": {
     "seed": "node seed/index.js",
-    "server-dev": "nodemon server/index.js",
+    "server-dev": "DB=localhost nodemon server/index.js",
     "react-dev": "webpack --watch",
     "test": "jest",
     "start": "node server/index.js",
