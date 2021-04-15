@@ -22,6 +22,7 @@ class App extends Component {
 
   componentDidMount() {
     this.getDetails();
+    this.getHostInfo();
   }
 
   getDetails() {
@@ -37,6 +38,21 @@ class App extends Component {
       .catch((err) => {
         console.log(err);
       });
+  }
+
+  getHostInfo() {
+    const urlCharacters = window.location.href.split('/');
+    const propertyId = urlCharacters[urlCharacters.length - 2];
+
+    axios.get(`http://13.57.41.115:3007/${propertyId}/host/`)
+      .then((hostInfo) => {
+        this.setState({
+          host: hostInfo.data[0]
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      })
   }
 
   togglePop() {

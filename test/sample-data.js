@@ -105,8 +105,8 @@ module.exports.sampleEntirePlaceDetail = {
 };
 
 module.exports.sampleHost = {
-  Hostname: 'Host McHosterman',
-  HostprofilePicture: 'https://i.pravatar.cc/150?img=70',
+  hostName: 'Host McHosterman',
+  profilePic: 'https://i.pravatar.cc/150?img=70',
   reviewCount: 100,
   isVerified: false,
   isSuperhost: false,
@@ -114,8 +114,8 @@ module.exports.sampleHost = {
 };
 
 module.exports.sampleSuperHost = {
-  Hostname: 'Super Host McHosterman',
-  HostprofilePicture: 'https://i.pravatar.cc/150?img=45',
+  hostName: 'Super Host McHosterman',
+  profilePic: 'https://i.pravatar.cc/150?img=45',
   reviewCount: 45,
   isVerified: true,
   isSuperhost: true,

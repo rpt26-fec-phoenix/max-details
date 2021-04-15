@@ -6,7 +6,7 @@ const Title = ({details, host}) => {
   return (
     <StyledTitle>
       <StyledDiv>
-        <StyledHeading>{typeOfPlace} in {propertyType} hosted by {host.Hostname}</StyledHeading>
+        <StyledHeading>{typeOfPlace} in {propertyType} hosted by {host.hostName}</StyledHeading>
         <StyledArrangements>
           <span>{guests} {guests > 1 ? 'guests' : 'guest'}</span><span> · </span>
           <span>{bedrooms} { bedrooms > 1 ? 'bedrooms' : 'bedroom'}</span><span> · </span>
@@ -14,7 +14,7 @@ const Title = ({details, host}) => {
           <span>{baths} {baths > 1 ? 'baths' : 'bath'}</span>
         </StyledArrangements>
       </StyledDiv>
-      <StyledImg src={host.HostprofilePicture}></StyledImg>
+      <StyledImg src={host.profilePic}></StyledImg>
     </StyledTitle>
   );
 };

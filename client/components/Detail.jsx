@@ -15,7 +15,7 @@ const Detail = ({type, details, host, togglePop}) => {
     ],
     superHost: [
       <Award size="24"/>,
-      `${host.Hostname} is a Superhost`,
+      `${host.hostName} is a Superhost`,
       'Superhosts are experienced, highly rated hosts who are committed to providing great stays for guests.'
     ],
     selfCheckIn: [
