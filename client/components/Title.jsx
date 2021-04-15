@@ -1,47 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
-
-const StyledTitle = styled.div`
-  padding-top: 48px;
-  padding-bottom: 24px;
-  padding-left: 40px;
-  padding-right: 40px;
-  max-width: 1280px;
-  min-width: 744px;
-  margin-left: 10%;
-  margin-right: 10%;
-  border-bottom: 1px solid gainsboro;
-`;
-
-const StyledDiv = styled.div`
-  display: inline-block;
-  padding-right: 10px;
-  max-width: 90%;
-`;
-
-const StyledHeading = styled.div`
-color: rgb(34, 34, 34);
-font-weight: 500;
-font-size: 22px;
-line-height: 26px;
-margin-bottom: 8px;
-`;
-
-const StyledArrangements = styled.div`
-color: #222222 !important;
-font-weight: 325 !important;
-font-size: 16px !important;
-line-height: 20px !important;
-`;
-
-const StyledImg = styled.img`
-  border-radius: 56%;
-  width: 56px;
-  height: 56px;
-  background: white;
-  display: inline;
-  position: absolute;
-`;
+import { StyledTitle, StyledDiv, StyledHeading, StyledArrangements, StyledImg } from '../styles/Title.jsx';
 
 const Title = ({details, host}) => {
   const { sleepingArrangements: {guests, bedrooms, beds, baths}, typeOfPlace, propertyType} = details;

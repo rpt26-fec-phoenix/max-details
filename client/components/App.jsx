@@ -40,7 +40,6 @@ class App extends Component {
   }
 
   togglePop() {
-    console.log('toggling the pop');
     this.setState({
       seen: !this.state.seen
     });
@@ -59,7 +58,7 @@ class App extends Component {
             <Details details={details} host={host} togglePop={this.togglePop}/>
             <About details={details}/>
           </div>
-          { seen ? <HouseRules/> : null}
+          { seen ? <HouseRules rules={details.houseRules}/> : null}
         </div>
       );
     }
