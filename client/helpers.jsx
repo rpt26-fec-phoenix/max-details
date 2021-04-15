@@ -36,7 +36,24 @@ const createHostRulesString = (houseRules) => {
   return result;
 };
 
+const createPropertyTitle = (typeOfPlace, propertyType) => {
+  propertyType = convertFromCamelCase(propertyType);
+
+  if (typeOfPlace === 'entirePlace') {
+    return 'Entire ' + propertyType;
+  } else {
+    return convertFromCamelCase(typeOfPlace) + ' in ' + propertyType;
+  }
+};
+
+const convertFromCamelCase = (str) => {
+  const result = str.replace(/([A-Z])/g,' $1');
+  const final = result.charAt(0).toUpperCase()+result.slice(1);
+  return final;
+};
+
 
 module.exports = {
-  createHouseRules
+  createHouseRules,
+  createPropertyTitle
 };

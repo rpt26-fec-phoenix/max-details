@@ -34,6 +34,7 @@ const StyledImg = styled.img`
   background: white;
   display: inline;
   position: absolute;
+  margin-left: 100px;
 `;
 
 export { StyledTitle, StyledDiv, StyledHeading, StyledArrangements, StyledImg };
