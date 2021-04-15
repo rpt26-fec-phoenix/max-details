@@ -6,6 +6,7 @@ import GlobalStyles from './globalStyle.jsx';
 import Title from './Title.jsx';
 import Details from './Details.jsx';
 import About from './About.jsx';
+import HouseRules from './HouseRules.jsx';
 import {sampleDetail, sampleHost, sampleSuperHost} from '../../test/sample-data.js';
 
 class App extends Component {
@@ -13,12 +14,15 @@ class App extends Component {
     super(props);
     this.state = {
       details: {},
-      host: sampleHost
+      host: sampleHost,
+      seen: false
     };
+    this.togglePop = this.togglePop.bind(this);
   }
 
   componentDidMount() {
     this.getDetails();
+    this.getHostInfo();
   }
 
   getDetails() {
@@ -36,8 +40,29 @@ class App extends Component {
       });
   }
 
+  getHostInfo() {
+    const urlCharacters = window.location.href.split('/');
+    const propertyId = urlCharacters[urlCharacters.length - 2];
+
+    axios.get(`http://13.57.41.115:3007/${propertyId}/host/`)
+      .then((hostInfo) => {
+        this.setState({
+          host: hostInfo.data[0]
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+  }
+
+  togglePop() {
+    this.setState({
+      seen: !this.state.seen
+    });
+  }
+
   render() {
-    const {details, host} = this.state;
+    const {details, host, seen} = this.state;
     if (details.propertyId === undefined) {
       return <div></div>;
     } else {
@@ -46,9 +71,10 @@ class App extends Component {
           <GlobalStyles />
           <div id="details">
             <Title details={details} host={host}/>
-            <Details details={details} host={host}/>
+            <Details details={details} host={host} togglePop={this.togglePop}/>
             <About details={details}/>
           </div>
+          { seen ? <HouseRules rules={details.houseRules} togglePop={this.togglePop}/> : null}
         </div>
       );
     }

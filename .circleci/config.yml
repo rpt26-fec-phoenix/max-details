@@ -30,10 +30,10 @@ jobs:
           at: .
       - run:
           name: seed
-          command: npm run seed
+          command: DB=localhost npm run seed
       - run:
           name: Test
-          command: npm test
+          command: DB=localhost npm test
 workflows:
   version: 2
   build_and_test:

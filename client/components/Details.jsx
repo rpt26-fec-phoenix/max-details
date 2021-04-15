@@ -5,24 +5,22 @@ import styled from 'styled-components';
 const StyledDetails = styled.div`
   padding-top: 32px;
   padding-bottom: 32px;
-  max-width: 95%;
-  margin: auto;
   border-bottom: 1px solid gainsboro;
 `;
 
-const Details = ({details, host}) => {
+const Details = ({ details, host, togglePop }) => {
   const detailsToRender = [];
   if (details.typeOfPlace === 'entirePlace') {
-    detailsToRender.push(<Detail key ={1} type={'entirePlace'} details={details} host={host}/>);
+    detailsToRender.push(<Detail key={1} type={'entirePlace'} details={details} host={host}/>);
   }
   if (host.isSuperhost) {
-    detailsToRender.push(<Detail key ={2} type={'superHost'} details={details} host={host}/>);
+    detailsToRender.push(<Detail key={2} type={'superHost'} details={details} host={host}/>);
   } else if (details.houseRules.selfCheckIn.allowSelfCheckIn) {
-    detailsToRender.push(<Detail key ={2} type={'selfCheckIn'} details={details} host={host}/>);
+    detailsToRender.push(<Detail key={2} type={'selfCheckIn'} details={details} host={host}/>);
   }
-  detailsToRender.push(<Detail key ={3} type={'enhancedClean'} details={details} host={host}/>);
-  detailsToRender.push(<Detail key ={4} type={'cancellationPolicy'} details={details} host={host}/>);
-  detailsToRender.push(<Detail key ={5} type={'houseRules'} details={details} host={host}/>);
+  detailsToRender.push(<Detail key={3} type={'enhancedClean'} details={details} host={host}/>);
+  detailsToRender.push(<Detail key={4} type={'cancellationPolicy'} details={details} host={host}/>);
+  detailsToRender.push(<Detail key={5} type={'houseRules'} details={details} host={host} togglePop={togglePop}/>);
 
   return (
     <StyledDetails>
