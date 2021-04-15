@@ -3,12 +3,6 @@ import styled from 'styled-components';
 const StyledTitle = styled.div`
   padding-top: 48px;
   padding-bottom: 24px;
-  padding-left: 40px;
-  padding-right: 40px;
-  max-width: 1280px;
-  min-width: 744px;
-  margin-left: 10%;
-  margin-right: 10%;
   border-bottom: 1px solid gainsboro;
 `;
 
