@@ -1,11 +1,12 @@
 const db = require('../database/index.js');
 const path = require('path');
 const express = require('express');
+const expressStaticGzip = require('express-static-gzip');
 const port = 3003;
 
 const app = express();
 
-app.use('/:propertyId', express.static(path.join(__dirname, '../public')));
+app.use('/:propertyId', expressStaticGzip(path.join(__dirname, '../public')));
 
 app.get('/details/:propertyId', (req, res) => {
   db.getDetails(req.params.propertyId)
