@@ -49,6 +49,16 @@ npm run server-dev
 
 ## Deployment
 ### Docker Deployment
+#### Create a new local image:
+```sh
+npm run bundle
+npm run image
+```
+Push the image to Docker Hub:
+```sh
+docker push maxmilpro/detailsservice
+```
+#### Run the app in a local container:
 ```sh
 docker-compose up
 ```
